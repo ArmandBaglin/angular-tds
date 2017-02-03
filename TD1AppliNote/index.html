@@ -5,16 +5,20 @@
         <title>Note Application</title>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
         <script src="js/app.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-cookies.min.js"></script>
+        <script src="js/mainController.js"></script>
     </head>
-    <body data-ng-app="MainController as mainCtrl">
+    <body data-ng-controller="MainController as mainCtrl">
         <div>
             Note :
             </br>
-            <textarea rows="4" cols="50"></textarea></br>
+            <textarea rows="4" cols="50" maxlength="100" data-ng-model="mainCtrl.value"></textarea></br>
         </div>
-        <button id="enregistrer" ng-click="">Enregistrer</button> <button id="effacer" ng-click="">Effacer</button>
+        <button id="enregistrer" data-ng-click="mainCtrl.save()">Enregistrer</button> <button id="effacer" data-ng-click="mainCtrl.clear()">Effacer</button>
         <fieldset>
             <label>Nombre de caractères restants :</label>
+            <div> {{mainCtrl.count()}}</div>
+            <div> {{mainCtrl.show()}}</div>
         </fieldset>
     </body>
 </html>
