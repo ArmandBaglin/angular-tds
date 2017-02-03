@@ -1,0 +1,38 @@
+body{
+    align:center;
+}
+
+fieldset {
+    background-color: #399ABE;
+    border-color: RED;
+    border-radius: 4px;
+    width: 350px;
+}
+
+button{
+    text-align : left;
+    background-color: #7fb9e9;
+    border-color: BLUE;
+    border-radius: 8px;
+    width: 300px;
+    height:50px;
+}
+
+.codepromo{
+    border-radius:6px;
+    border-color:BLACK;
+}
+
+.main{
+    background-color:#a6cceb;
+    border-color:BLACK;
+    border-radius:8px;
+}
+
+.total{
+    text-align:left;
+}
+
+hr{
+    border-color:RED;
+}

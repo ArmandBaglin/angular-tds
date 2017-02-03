@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr" data-ng-app="ApplicationService">
+<head>
+    <meta charset="UTF-8">
+    <title>Application Service</title>
+    <link rel="stylesheet" href="appliService.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="js/appService.js"></script>
+    <script src="js/controllerService.js"></script>
+</head>
+<body ng-controller="ControllerService as Ctrlservice">
+<center>
+    <div>
+        <h1 style="text-align:center">Services</h1>
+    </div>
+    <fieldset class="main">
+            Choisissez les éléments à inclure :<br><br>
+        <div>
+            <button ng-repeat="service in Ctrlservice.services">
+                {{service.name}} {{service.price}},00 €
+            </button>
+        </div>
+        <div class="total">
+            <hr>
+            <p>Total : <br></p>
+            <p></p> <input type="checkbox" id="promo">
+            <input class="codepromo" type="text" id="codepromo" placeholder="Code Promo"><br></p>
+            Remise : <br>
+            Total avec Remise :
+
+        </div>
+    </fieldset>
+
+</center>
+</body>
+</html>
