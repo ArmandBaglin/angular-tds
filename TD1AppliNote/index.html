@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Note Application</title>
+        <link rel="stylesheet" href="style.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
         <script src="js/app.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-cookies.min.js"></script>
@@ -16,9 +17,10 @@
         </div>
         <button id="enregistrer" data-ng-click="mainCtrl.save()">Enregistrer</button> <button id="effacer" data-ng-click="mainCtrl.clear()">Effacer</button>
         <fieldset>
-            <label>Nombre de caractères restants :</label>
-            <div> {{mainCtrl.count()}}</div>
-            <div> {{mainCtrl.show()}}</div>
+            <label>Nombre de caractères restants : {{mainCtrl.count()}}</label>
+        </fieldset>
+        <fieldset ng-style="mainCtrl.show() === 'Message sauvegardé' && {'background-color':'rgba(213,255,204,0.7)','color':'#008b06','border':'1px solid #008b06'}  || mainCtrl.show() === 'Message modifié' && mainCtrl.count()>20 && {'background-color':'rgba(204,204,255,0.7)','color':'#00008B','border':'1px solid #00008B'}|| mainCtrl.show() === 'Message modifié' &&  mainCtrl.count()<81 && {'background-color':'rgba(255,204,204,0.7)','color':'#8b0900','border':'1px solid #8b0900'}" style="background-color:white;color:white;border:1px solid white;">
+            {{mainCtrl.show()}}
         </fieldset>
     </body>
 </html>

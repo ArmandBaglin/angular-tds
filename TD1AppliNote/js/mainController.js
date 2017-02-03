@@ -5,7 +5,7 @@ var app=angular.module("ApplicationNote",["ngCookies"]);
 app.controller("MainController", ["$cookies", function(cookies){
 
     var message="";
-    this.value=cookies.get('messageCookie')
+    this.value=cookies.get('messageCookie') || "";
     var self=this;
 
     this.count = function(){
