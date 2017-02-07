@@ -23,7 +23,25 @@ var app=angular.module("ApplicationService").controller("ControllerService", [ f
         }
     ]
 
-    this.count = function(){
+    this.activer = function(service){
+        service.active=!service.active;
+        if(service.active==true){
+            this.value=this.value+1;
+            this.prix=this.prix+service.price;
+        }
+        else{
+            this.value=this.value-1;
+            this.prix=this.prix-service.price;
+        }
+    }
 
+    this.value=1;
+    this.prix=300
+    this.count=function(service){
+        return this.value;
+    }
+
+    this.total=function(){
+        return this.prix;
     }
 }]);

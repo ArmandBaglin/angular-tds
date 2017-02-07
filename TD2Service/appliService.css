@@ -33,6 +33,19 @@ button{
     text-align:left;
 }
 
+.remise{
+    text-align:left;
+}
+
+.count{
+    text-align:right;
+}
+
 hr{
     border-color:RED;
+}
+
+.active{
+    box-shadow: 1px 1px 10px black inset, 0 1px 0 rgba( 255, 0, 0, 1);
+    background-color:RED;
 }

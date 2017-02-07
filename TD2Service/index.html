@@ -14,20 +14,21 @@
         <h1 style="text-align:center">Services</h1>
     </div>
     <fieldset class="main">
-            Choisissez les éléments à inclure :<br><br>
+            Choisissez les éléments à inclure : {{Ctrlservice.count()}}<br><br>
         <div>
-            <button ng-repeat="service in Ctrlservice.services">
-                {{service.name}} {{service.price}},00 €
+            <button class="button" ng-repeat="service in Ctrlservice.services" ng-class="{'active' : service.active}" ng-click="Ctrlservice.activer(service)">
+                {{service.name}} {{service.price | currency: $ : 2}}
             </button>
         </div>
+        <hr>
         <div class="total">
-            <hr>
-            <p>Total : <br></p>
-            <p></p> <input type="checkbox" id="promo">
+            Total : {{Ctrlservice.total() | currency: $ : 2}}<br><br>
+            <input type="checkbox" id="promo">
             <input class="codepromo" type="text" id="codepromo" placeholder="Code Promo"><br></p>
+        </div>
+        <div class="remise" ng-show="false">
             Remise : <br>
             Total avec Remise :
-
         </div>
     </fieldset>
 
