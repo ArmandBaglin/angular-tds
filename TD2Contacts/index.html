@@ -11,35 +11,35 @@
 <body data-ng-app="ApplicationContacts">
     <fieldset data-ng-controller="ControllerContacts as Ctrl">
         <h3>Contacts</h3>
-
+        <input type="text" placeholder="Filter..." ng-model="search">
         <table>
-            <tr ng-repeat="contact in Ctrl.contacts">
+            <tr ng-repeat="contact in Ctrl.contacts | visible | filter:search">
                 <td>{{contact.nom}}</td>
                 <td>{{contact.prenom}}</td>
                 <td>{{contact.email}}</td>
-                <td><button>!</button></td>
-                <td><button>X</button></td>
+                <td><button ng-click="Ctrl.modifClick()" style="border:none;background-color:white"><img src="modifier.PNG"></button></td>
+                <td><button style="border:none;background-color:white"><img src="suppr.PNG"></button></td>
             </tr>
         </table>
     <br>
-    <button>+</button>
+    <button ng-click="Ctrl.ajoutClick()">+</button>
 
-    <div name="ajout">
+    <div name="ajout" ng-show="Ctrl.ajoutVisible()">
         <h3>Ajouter un contact</h3>
         <input type="text" placeholder="Entrer un nom...">
         <input type="text" placeholder="Prénom...">
         <input type="text" placeholder="Email...">
         <button>Valider</button>
-        <button>Annuler</button>
+        <button ng-click="Ctrl.annulerAjout()">Annuler</button>
     </div>
 
-    <div name="ajout">
+    <div name="modifier" ng-show="Ctrl.modifVisible()">
         <h3>Modifier un contact</h3>
         <input type="text">
         <input type="text">
         <input type="text">
         <button>Valider</button>
-        <button>Annuler</button>
+        <button ng-click="Ctrl.annulerModif()">Annuler</button>
     </div>
 
     </fieldset>
