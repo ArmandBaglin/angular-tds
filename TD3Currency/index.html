@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Application Currency</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controller.js"></script>
+</head>
+<body data-ng-app="ApplicationCurrency">
+    <h3>Application Currency</h3>
+    <fieldset data-ng-controller="ControllerCurrency as Ctrl">
+        <input type="text" style="width:60px;">  <select style="width:200px;"><option data-ng-option="v.name for(k,v) in currencies"></option></select> <input type="button" id="changer" value="changer"> <select style="width:200px;"></select>  <input type="button" id="convertir" value="Convertir"> <input type="text" style="width:60px">
+
+
+    </fieldset>
+
+</body>
+</html>
