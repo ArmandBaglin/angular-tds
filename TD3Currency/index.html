@@ -11,7 +11,7 @@
 <body data-ng-app="ApplicationCurrency">
     <h3>Application Currency</h3>
     <fieldset data-ng-controller="ControllerCurrency as Ctrl">
-        <input type="text" style="width:60px;">  <select style="width:200px;" ng-model="currencies" data-ng-options="v.code for(k,v) in Ctrl.currencies"></select> <input type="button" id="changer" value="changer"> <select style="width:200px;"></select>  <input type="button" id="convertir" value="Convertir"> <input type="text" style="width:60px">
+        <input type="text" style="width:60px;">  <select style="width:200px;" ng-model="Ctrl.from"  data-ng-options="v.code+'-'+v.name for (k,v) in Ctrl.currencies"></select> <input type="button" id="changer" value="changer" ng-click="Ctrl.swap()"> <select style="width:200px;" ng-model="Ctrl.to" data-ng-options="v.code+'-'+v.name for (k,v) in Ctrl.currencies"></select>  <input type="button" id="convertir" value="Convertir" ng-click="Ctrl.convertir()"> <input type="text" style="width:60px">
 
 
     </fieldset>
