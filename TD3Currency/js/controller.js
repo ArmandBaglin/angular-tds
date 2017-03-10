@@ -4,6 +4,8 @@
 angular.module("ApplicationCurrency").controller("ControllerCurrency", [ '$http', function($http){
     var self = this;
     var what = 1;
+    this.in;
+    this.out;
 
     $http.get('app/data/currencymap.json').
     then(function(response) {
@@ -16,9 +18,10 @@ angular.module("ApplicationCurrency").controller("ControllerCurrency", [ '$http'
         });
 
     self.convertir= function(what) {
-        $http.jsonp('https://free.currencyconverterapi.com/api/v3/convert?compact=y&q=' + from.code + '_' + to.code, {jsonpCallbackParam: 'callback'})
+        $http.jsonp('https://free.currencyconverterapi.com/api/v3/convert?compact=y&q=' + self.from.code + '_' + self.to.code, {jsonpCallbackParam: 'callback'})
             .then(function (response) {
                 self.result = response.data[self.from.code + '_' + self.to.code].val;
+                self.out=self.in*self.result;
             });
     }
 
@@ -27,4 +30,5 @@ angular.module("ApplicationCurrency").controller("ControllerCurrency", [ '$http'
         self.from=self.to;
         self.to=tmp;
     }
+
 }]);
