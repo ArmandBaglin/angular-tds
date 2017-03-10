@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr" data-ng-app="ApplicationCalculatrice">
+<head>
+    <meta charset="UTF-8">
+    <title>Application Calculatrice</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controller.js"></script>
+
+</head>
+<body data-ng-controller="ControllerCalculatrice as Ctrl">
+    <h3>Calculatrice</h3>
+    <fieldset>
+        <div class="ecran">
+            <input type="text">
+        </div>
+    </fieldset>
+    <fieldset>
+        <label ng-repeat="op in Ctrl.ops">
+            <button ng-show="op.value != ' ' && op.value != '\n'">{{op.value}}</button>
+            <label ng-show="op.value==' '">&nbsp;</label>
+            <label ng-show="op.value=='\n'"><br></label>
+        </label>
+    </fieldset>
+</body>
+</html>
