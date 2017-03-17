@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fr" data-ng-app="MainModule">
+    <head>
+        <meta charset="UTF-8">
+        <title>main</title>
+        <base href="/TD5Routage/"/>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular-route.min.js"></script>
+        <script src="js/mainModule.js"></script>
+        <script src="js/mainController.js"></script>
+        <script src="js/routing.js"></script>
+    </head>
+    <body data-ng-controller="MainController as mCtrl">
+        <h1>Main</h1>
+        <div ng-bind="mCtrl.contentMain"></div>
+    </body>
+</html>
